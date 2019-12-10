@@ -31,8 +31,8 @@ function generateSchedule() {
 }
 
 
-//input field onclick, no clear
-$(".input").on("click", function(event) {
+//button onclick, no clear
+$(".btn").on("click", function(event) {
     event.preventDefault();
 
 })
