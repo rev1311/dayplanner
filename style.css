@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+.hour {
+    background-color: #aaa;
+}
+
+.input {
+    background-color: rgb(182, 55, 55);
+}
+
+.save {
+    background-color: rgb(16, 119, 223);
+}
