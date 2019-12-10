@@ -7,19 +7,34 @@
     <title>Day Planner</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js" integrity="sha256-I5ZXO8KcMnqNkrXU7baGig70nATYjNDnxxA2d40PcR8=" crossorigin="anonymous"></script> -->
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
 </head>
 <body>
 
 <div class="container">
 
         <div class="row">
-            <div class="col-lg-12 today">date header</div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6" id="today"></div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6" id="date"></div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-12 hour">hour markers</div>
-            <div class="col-lg-12 input">input fields</div>
-            <div class="col-lg-12 save">save buttons</div>
+        <div class="row box">
+            <div class="col-12 col-lg-12 hour">
+
+                <table class="hour">
+                    <tr id="9a">
+                        <td class="hour" id="hour9">9a</td>
+                        <td class="input" id="input9">
+                            <input type="text" placeholder="----------------" id="">
+                        </td>
+                        <td class="save" id="save9">
+                            <button type="submit">save</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
         </div>
 
 </div>
@@ -27,6 +42,5 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js" integrity="sha256-I5ZXO8KcMnqNkrXU7baGig70nATYjNDnxxA2d40PcR8=" crossorigin="anonymous"></script>
 </body>
 </html>
