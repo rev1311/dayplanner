@@ -2,40 +2,109 @@ $(document).ready(function () {
 
 
 // moment js time/date
-$("#today").text(moment().format('ddd h:mmp'));
-$("#date").text(moment().format('MMM DD'));
+$("#currentDay").append(moment().format('dddd MMMM Do'));
 
 
-generateSchedule();
+liveTime();
 
+function liveTime() {
+var hoursChange = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 
-//dynamically populate schedule table
-function generateSchedule() {
-
-    var hourArr = ["9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p"];
-
-    for ( var i = 0; i < hourArr.length; i++) {
-        var tr = $("<tr>").val(hourArr[i]);
-        var tdHour = $("<td>").addClass("hour").val(hourArr[i]).text(hourArr[i]);
-        var tdInput = $("<td>").addClass("input").val(hourArr[i]);
-        var tdSave = $("<td>").addClass("save").val(hourArr[i]);
-
-        var inputTxt = $("<input>").addClass("inputTxt").attr("placeholder", "placeholdertext");
-        var save = $("<button>").addClass("btn").text("save");
-
-        $("tbody").append(tr);
-        $(tr).append(tdHour, tdInput, tdSave);
-        $(tdInput).append(inputTxt);
-        $(tdSave).append(save);
+  var currentTime = moment().format('H');
+  for(var i = 0; i < hoursChange.length; i++) {
+    if (parseInt(hoursChange[i]) > currentTime) {
+      $(`#${hoursChange[i]}`).attr("class", "future");
+    } else if (parseInt(hoursChange[i]) < currentTime) {
+      $(`#${hoursChange[i]}`).attr("class", "past");
+    } else if (parseInt(hoursChange[i]) == currentTime) {
+      $(`#${hoursChange[i]}`).attr("class", "present");
+    
     }
+  }
 }
 
 
-//button onclick, no clear
-$(".btn").on("click", function(event) {
-    event.preventDefault();
+// pull local storage, button onclick, save to local storage
 
-})
+$("#9").append(JSON.parse(localStorage.getItem("data9Id")));
+
+$(".saveBtn").on("click", function() {
+  var data9 = $("#9").val();
+
+  localStorage.setItem("data9Id", JSON.stringify(data9));
+});
 
 
-})
+$("#10").append(JSON.parse(localStorage.getItem("data10Id")));
+
+$(".saveBtn").on("click", function() {
+  var data10 = $("#10").val();
+
+  localStorage.setItem("data10Id", JSON.stringify(data10));
+});
+
+
+$("#11").append(JSON.parse(localStorage.getItem("data11Id")));
+
+$(".saveBtn").on("click", function() {
+  var data11 = $("#11").val();
+
+  localStorage.setItem("data11Id", JSON.stringify(data11));
+});
+
+
+$("#12").append(JSON.parse(localStorage.getItem("data12Id")));
+
+$(".saveBtn").on("click", function() {
+  var data12 = $("#12").val();
+
+  localStorage.setItem("data12Id", JSON.stringify(data12));
+});
+
+
+$("#13").append(JSON.parse(localStorage.getItem("data13Id")));
+
+$(".saveBtn").on("click", function() {
+  var data13 = $("#13").val();
+
+  localStorage.setItem("data13Id", JSON.stringify(data13));
+});
+
+
+$("#14").append(JSON.parse(localStorage.getItem("data14Id")));
+
+$(".saveBtn").on("click", function() {
+  var data14 = $("#14").val();
+
+  localStorage.setItem("data14Id", JSON.stringify(data14));
+});
+
+
+$("#15").append(JSON.parse(localStorage.getItem("data15Id")));
+
+$(".saveBtn").on("click", function() {
+  var data15 = $("#15").val();
+
+  localStorage.setItem("data15Id", JSON.stringify(data15));
+});
+
+
+$("#16").append(JSON.parse(localStorage.getItem("data16Id")));
+
+$(".saveBtn").on("click", function() {
+  var data16 = $("#16").val();
+
+  localStorage.setItem("data16Id", JSON.stringify(data16));
+});
+
+
+$("#17").append(JSON.parse(localStorage.getItem("data17Id")));
+
+$(".saveBtn").on("click", function() {
+  var data17 = $("#17").val();
+
+  localStorage.setItem("data17Id", JSON.stringify(data17));
+});
+
+
+});
